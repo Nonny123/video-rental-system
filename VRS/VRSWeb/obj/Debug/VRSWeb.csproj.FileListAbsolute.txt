@@ -105,3 +105,5 @@ C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.cspr
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.CoreCompileInputs.cache
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.dll
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.pdb
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.InitialModel.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.GenerateResource.cache
