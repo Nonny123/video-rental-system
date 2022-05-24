@@ -107,3 +107,12 @@ C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.dll
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.pdb
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.InitialModel.resources
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.GenerateResource.cache
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddIsSubscribedToCustomer.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddMembershipType.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.PopulateMembershipTypes.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddNameToMembershipType.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.SetNameOfMembershipTypes.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddBirthdateToCustomer.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddMovie.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.InsertGenres.resources
