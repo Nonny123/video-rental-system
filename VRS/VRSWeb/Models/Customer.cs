@@ -10,7 +10,7 @@ namespace VRSWeb.Models
     {
         public int Id { get; set; } 
         
-        [Required]
+        [Required(ErrorMessage = "Please enter customer's name")]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -22,6 +22,7 @@ namespace VRSWeb.Models
         public MembershipType MembershipType { get; set; } //nav property - for loading an object and its related object
         
         [Display(Name = "Membership Type")]
+        [Min18YearsIfAMember]
         public byte MembershipTypeId { get; set; } //FK for when the FKID only is needed and not the related object
     }
 }
