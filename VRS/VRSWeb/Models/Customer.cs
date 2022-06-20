@@ -15,6 +15,7 @@ namespace VRSWeb.Models
         public string Name { get; set; }
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 
         public bool IsSubscribedToNewsletter { get; set; }
@@ -22,7 +23,6 @@ namespace VRSWeb.Models
         public MembershipType MembershipType { get; set; } //nav property - for loading an object and its related object
         
         [Display(Name = "Membership Type")]
-        [Min18YearsIfAMember]
         public byte MembershipTypeId { get; set; } //FK for when the FKID only is needed and not the related object
     }
 }
