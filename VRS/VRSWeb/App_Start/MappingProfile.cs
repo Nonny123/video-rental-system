@@ -14,6 +14,15 @@ namespace VRSWeb.App_Start
         {
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<CustomerDto, Customer>();
+            Mapper.CreateMap<Genre, GenreDto>();
+
+
+            // Dto to Domain to let automapper ignore so the resource can be updated
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MovieDto, Movie>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
         }
     }
 }

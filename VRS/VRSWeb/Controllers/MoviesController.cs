@@ -1,15 +1,16 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
+using VRSWeb.Dtos;
 using VRSWeb.Models;
-using VRSWeb.ViewModels;
+
 
 namespace VRSWeb.Controllers
 {
-    public class MoviesController : Controller
+    public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;
 
@@ -18,102 +19,77 @@ namespace VRSWeb.Controllers
             _context = new ApplicationDbContext();
         }
 
-        protected override void Dispose(bool disposing)
+        public IEnumerable<MovieDto> GetMovies(string query = null)
         {
-            _context.Dispose();
+            var moviesQuery = _context.Movies
+                .Include(m => m.Genre)
+                .Where(m => m.NumberAvailable > 0);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            return moviesQuery
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
         }
 
-        public ViewResult Index()
-        {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-
-            return View(movies);
-        }
-
-        public ViewResult New()
-        {
-            var genres = _context.Genres.ToList();
-
-            var viewModel = new MovieFormViewModel
-            {
-                Genres = genres
-            };
-
-            return View("MovieForm", viewModel);
-        }
-
-        public ActionResult Edit(int id)
+        public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
-                return HttpNotFound();
+                return NotFound();
 
-            var viewModel = new MovieFormViewModel(movie)
-            {
-                Genres = _context.Genres.ToList()
-            };
-
-            return View("MovieForm", viewModel);
+            return Ok(Mapper.Map<Movie, MovieDto>(movie));
         }
-
-
-        public ActionResult Details(int id)
-        {
-            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
-
-            if (movie == null)
-                return HttpNotFound();
-
-            return View(movie);
-
-        }
-
 
         [HttpPost]
-        public ActionResult Save(Movie movie)
+        //[Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
-            {
-                var viewModel = new MovieFormViewModel(movie)
-                {
-                    Genres = _context.Genres.ToList()
-                };
+                return BadRequest();
 
-                return View("MovieForm", viewModel);
-            }
+            var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+            _context.Movies.Add(movie);
+            _context.SaveChanges();
 
-            if (movie.Id == 0)
-            {
-                movie.DateAdded = DateTime.Now;
-                _context.Movies.Add(movie);
-            }
-            else
-            {
-                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
-                movieInDb.Name = movie.Name;
-                movieInDb.GenreId = movie.GenreId;
-                movieInDb.NumberInStock = movie.NumberInStock;
-                movieInDb.ReleaseDate = movie.ReleaseDate;
-            }
+            movieDto.Id = movie.Id;
+            return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
+        }
+
+        [HttpPut]
+        //[Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movieInDb == null)
+                return NotFound();
+
+            Mapper.Map(movieDto, movieInDb);
 
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Movies");
-        }
-        // GET: Movies
-        public ActionResult Random()
-        {
-            var movie = new Movie() {Name = "Shrek!"};
-            return View(movie);
+            return Ok();
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
-        public ActionResult ByReleaseDate(int year, int month)
+        [HttpDelete]
+        //[Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult DeleteMovie(int id)
         {
-            return Content(year + "/" + month);
-        }
+            var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
 
-        
+            if (movieInDb == null)
+                return NotFound();
+
+            _context.Movies.Remove(movieInDb);
+            _context.SaveChanges();
+
+            return Ok();
+        }
     }
 }

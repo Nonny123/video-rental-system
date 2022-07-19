@@ -188,6 +188,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\GenreDto.cs" />
+    <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,6 +232,10 @@
     <Compile Include="Migrations\202205240958405_InsertGenres.cs" />
     <Compile Include="Migrations\202205240958405_InsertGenres.Designer.cs">
       <DependentUpon>202205240958405_InsertGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207190551285_AddNumberAvailableToMovie.cs" />
+    <Compile Include="Migrations\202207190551285_AddNumberAvailableToMovie.Designer.cs">
+      <DependentUpon>202207190551285_AddNumberAvailableToMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205240958405_InsertGenres.resx">
       <DependentUpon>202205240958405_InsertGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207190551285_AddNumberAvailableToMovie.resx">
+      <DependentUpon>202207190551285_AddNumberAvailableToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
