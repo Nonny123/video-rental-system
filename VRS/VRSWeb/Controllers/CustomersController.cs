@@ -74,9 +74,11 @@ namespace VRSWeb.Controllers
         {
             //var customers = _context.Customers.ToList(); //_context.Customers -> Deferred Loading | _context.Customers.ToList -> ToList executes
 
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
-            return View(customers);
+            //return View(customers);
+
+            return View();
         }
 
         public ActionResult Details(int id)
