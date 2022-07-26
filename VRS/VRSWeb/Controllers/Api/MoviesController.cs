@@ -3,13 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web.Mvc;
 using System.Web.Http;
 using VRSWeb.Dtos;
 using VRSWeb.Models;
 
-
-namespace VRSWeb.Controllers
+namespace VRSWeb.Controllers.Api
 {
     public class MoviesController : ApiController
     {
@@ -19,19 +17,6 @@ namespace VRSWeb.Controllers
         {
             _context = new ApplicationDbContext();
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();
-        }
-
-        //public ViewResult Index()
-        //{
-        //    //if (User.IsInRole(RoleName.CanManageMovies))
-        //    //    return View("List");
-
-        //    //return View("ReadOnlyList");
-        //}
 
         public IEnumerable<MovieDto> GetMovies(string query = null)
         {
