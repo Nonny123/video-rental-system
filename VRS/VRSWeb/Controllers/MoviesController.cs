@@ -23,13 +23,13 @@ namespace VRSWeb.Controllers
             _context.Dispose();
         }
 
-        //public ViewResult Index()
-        //{
-        //    if (User.IsInRole(RoleName.CanManageMovies))
-        //        return View("List");
+        public ViewResult Index()
+        {
+            //if (User.IsInRole(RoleName.CanManageMovies))
+            //    return View("List");
 
-        //    return View("ReadOnlyList");
-        //}
+            return View("ReadOnlyList");
+        }
 
         //[Authorize(Roles = RoleName.CanManageMovies)]
         public ViewResult New()
