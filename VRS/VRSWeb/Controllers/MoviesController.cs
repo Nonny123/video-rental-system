@@ -25,13 +25,13 @@ namespace VRSWeb.Controllers
 
         public ViewResult Index()
         {
-            //if (User.IsInRole(RoleName.CanManageMovies))
-            //    return View("List");
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
 
             return View("ReadOnlyList");
         }
 
-        //[Authorize(Roles = RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();
@@ -44,7 +44,7 @@ namespace VRSWeb.Controllers
             return View("MovieForm", viewModel);
         }
 
-        //[Authorize(Roles = RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
