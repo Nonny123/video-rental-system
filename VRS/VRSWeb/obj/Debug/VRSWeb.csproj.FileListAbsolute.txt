@@ -124,4 +124,5 @@ C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\System.Net.Http.F
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\System.Web.Http.xml
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\System.Web.Http.WebHost.xml
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddNumberAvailableToMovie.resources
-C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.CopyComplete
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.AssemblyReference.cache
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.SeedUsers.resources
