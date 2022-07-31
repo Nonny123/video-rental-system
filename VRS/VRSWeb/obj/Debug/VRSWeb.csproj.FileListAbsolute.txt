@@ -127,4 +127,4 @@ C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migr
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.AssemblyReference.cache
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.SeedUsers.resources
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddDrivingLicenseToApplicationUser.resources
-C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.CopyComplete
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.addmigrationAddPhoneNoToAppUser.resources
