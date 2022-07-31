@@ -22,10 +22,15 @@ namespace VRSWeb.Controllers.Api
 
 
         // GET /api/customers
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customerDtos = _context.Customers
-                .Include(c => c.MembershipType)
+            var customersQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+            var customerDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>);
 
@@ -35,7 +40,8 @@ namespace VRSWeb.Controllers.Api
         // GET /api/customers/1
         public IHttpActionResult GetCustomer(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers
+                .SingleOrDefault(c => c.Id == id);
             if (customer == null)
                 return NotFound();
 
@@ -65,7 +71,8 @@ namespace VRSWeb.Controllers.Api
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var customerInDb = _context.Customers
+                .SingleOrDefault(c => c.Id == id);
 
             if (customerInDb == null)
                 return NotFound();

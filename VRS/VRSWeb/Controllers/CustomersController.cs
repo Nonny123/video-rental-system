@@ -72,7 +72,7 @@ namespace VRSWeb.Controllers
         // GET: Customers
         public ViewResult Index()
         {
-            //var customers = _context.Customers.ToList(); //_context.Customers -> Deferred Loading | _context.Customers.ToList -> ToList executes
+            //var customers = _context.Customers.ToList(); //_context.Customers -> Deferred Loading | _context.Customers.ToList -> ToList executes eagerly
 
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
