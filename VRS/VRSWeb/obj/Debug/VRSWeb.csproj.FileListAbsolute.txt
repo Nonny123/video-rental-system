@@ -128,3 +128,8 @@ C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.cspr
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.SeedUsers.resources
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddDrivingLicenseToApplicationUser.resources
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.addmigrationAddPhoneNoToAppUser.resources
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Glimpse.Ado.dll
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Glimpse.AspNet.dll
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Glimpse.Core.dll
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Glimpse.EF6.dll
+C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Glimpse.Mvc5.dll
