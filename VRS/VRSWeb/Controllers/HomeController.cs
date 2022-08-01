@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
+using System.Runtime.Caching;
 
 namespace VRSWeb.Controllers
 {
@@ -14,6 +15,15 @@ namespace VRSWeb.Controllers
         //[OutputCache(Duration = 0, VaryByParam = "*", NoStore = true)] - disable caching
         public ActionResult Index()
         {
+
+            //Data Caching
+            //if(MemoryCache.Default["Genres"] == null)
+            //{
+            //   MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            //}
+
+            //var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+            
             return View();
         }
 
