@@ -136,4 +136,3 @@ C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Glimpse.Mvc5.dll
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.Migrations.AddRental.resources
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\Elmah.dll
 C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\bin\System.Data.SqlServerCe.dll
-C:\Users\NONSO\source\repos\video-rental-system\VRS\VRSWeb\obj\Debug\VRSWeb.csproj.CopyComplete
